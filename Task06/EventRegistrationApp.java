@@ -163,7 +163,7 @@ public class EventRegistrationApp extends JFrame {
             status.setText("CSV exported");
         } catch(Exception ex) { showError(ex); }
     }
-    private String csv(String s) { return "\"" + s.replace("\"","""") + "\""; }
+    private String csv(String s) { return "\"" + s.replace("\"","\"\"") + "\""; }
     private void setBusy(boolean busy) { studentId.setEnabled(!busy); studentName.setEnabled(!busy); event.setEnabled(!busy); }
     private void showError(Exception ex) {
         Throwable t=ex.getCause()==null?ex:ex.getCause();
